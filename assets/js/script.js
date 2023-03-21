@@ -36,13 +36,22 @@ for (let i = 0; i < weaponsArray.length; i++) {
     weaponsArray[i].setAttribute("src", `${imagesSourcesArray[i]}`);
 }
 
-winningTeam.push(rockWin, paperWin,scissorsWinRight, scissorsWinLeft);
+winningTeam.push(rockWin, paperWin, scissorsWinRight, scissorsWinLeft);
 losingTeam.push(rockLose, paperLose, scissorsLoseRight, scissorsLoseLeft);
 
 for (let button of buttons) {
     button.addEventListener("click", function () {
         playerDiv.style.display = "block";
         computerDiv.style.display = "block";
+        drawDiv.style.display = "none";
+        if (removePlayer.length > 0) {
+            playerDiv.removeChild(removePlayer[0]);
+            removePlayer.pop();
+        }
+        if (removeComputer.length > 0) {
+            computerDiv.removeChild(removeComputer[0]);
+            removeComputer.pop();
+        }
         getComputerWeapon();
         if (parseInt(this.getAttribute("data-choice")) === computerRandomWeapon) {
             drawDiv.style.cssText = "\
