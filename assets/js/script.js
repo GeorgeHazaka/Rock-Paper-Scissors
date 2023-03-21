@@ -5,6 +5,8 @@ const drawDiv = document.getElementById("draw-message");
 const drawPara = document.createElement("p");
 const playerWeapon = document.getElementById("player-weapon-image");
 const computerWeapon = document.getElementById("computer-weapon-image");
+const playerScore = document.getElementById("player-score-span");
+const computerScore = document.getElementById("computer-score-span");
 
 let computerRandomWeapon;
 
@@ -125,21 +127,23 @@ function getComputerWeapon() {
 }
 
 /**
- * Gets the current player score from the DOM and increments it by 1 and then calls the playerWinningAnimation function
+ * Gets the current player score from the DOM and increments it by 1 and then calls the playerWinningAnimation and the playerScoreAnimation functions
  */
 function incrementPlayerScore() {
     let oldScore = parseInt(document.getElementById("player-score-span").textContent);
     document.getElementById("player-score-span").textContent = ++oldScore;
     playerWinnerAnimation();
+    playerScoreAnimation();
 }
 
 /**
- * Gets the current computer score from the DOM and increments it by 1 and then calls the computerWinningAnimation function
+ * Gets the current computer score from the DOM and increments it by 1 and then calls the computerWinningAnimation and the computerScoreAnimation functions
  */
 function incrementComputerScore() {
     let oldScore = parseInt(document.getElementById("computer-score-span").textContent);
     document.getElementById("computer-score-span").textContent = ++oldScore;
-    computerWinnerAnimation()
+    computerWinnerAnimation();
+    computerScoreAnimation();
 }
 
 /**
@@ -154,4 +158,18 @@ function playerWinnerAnimation() {
  */
 function computerWinnerAnimation() {
     computerDiv.lastChild.style.cssText = "animation: right-to-left 1s ease;";
+}
+
+/**
+ * Creates an animation called "number-scale-increasing" for the player score increment
+ */
+function playerScoreAnimation() {
+    playerScore.style.cssText = "animation: number-scale-increasing 1s ease";
+}
+
+/**
+ * Creates an animation called "number-scale-increasing" for the computer score increment
+ */
+function computerScoreAnimation() {
+    computerScore.style.cssText = "animation: number-scale-increasing 1s ease";
 }

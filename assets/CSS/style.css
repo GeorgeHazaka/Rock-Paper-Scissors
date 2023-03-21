@@ -143,11 +143,28 @@ h1 {
 }
 
 #player-score-span {
+    position: absolute;
     margin-left: 5px;
     color: greenyellow;
 }
 
 #computer-score-span {
+    position: absolute;
     margin-left: 5px;
     color: #FC3B00;
+}
+
+@keyframes number-scale-increasing {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(3);
+        margin-left: 20%;
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
