@@ -23,11 +23,12 @@ const weaponsArray = [rockWin, rockLose, paperWin, paperLose, scissorsWinRight, 
 const imagesSourcesArray = [
     "assets/images/Win-Rock.png",
     "assets/images/Lose-Rock.png",
-    "assets/images/Win-Paper.png", "assets/images/Lose-Paper.png",
+    "assets/images/Win-Paper.png",
+    "assets/images/Lose-Paper.png",
     "assets/images/Win-Scissors-Right.png",
     "assets/images/Win-Scissors-Left.png",
     "assets/images/Lose-Scissors-Right.png",
-    "assets/images/Lose-Scissors-Left.png"
+    "assets/images/Lose-Scissors-left.png"
 ];
 const removePlayer = [];
 const removeComputer = [];
@@ -46,6 +47,7 @@ for (let button of buttons) {
         playerDiv.style.display = "block";
         computerDiv.style.display = "block";
         drawDiv.style.display = "none";
+        this.style.scale = "2";
         if (removePlayer.length > 0) {
             playerDiv.removeChild(removePlayer[0]);
             removePlayer.pop();
@@ -89,6 +91,7 @@ for (let button of buttons) {
                 incrementPlayerScore();
             } else {
                 if (computerRandomWeapon === 2) {
+                    console.log(winningTeam[computerRandomWeapon + 1]);
                     computerDiv.appendChild(winningTeam[computerRandomWeapon + 1]);
                     removeComputer.push(computerDiv.appendChild(winningTeam[computerRandomWeapon + 1]));
                 } else {
@@ -116,6 +119,21 @@ for (let button of buttons) {
                 incrementComputerScore();
             }
         }
+        for (let button of buttons) {
+            button.setAttribute("disabled", "disabled");
+        }
+
+        /**
+         * Creates a delay so that you can click a button once after 1500 ms and to recreate the animation of number-scale-increasing
+         */
+        setTimeout(() => {
+            playerScore.style.removeProperty("animation");
+            computerScore.style.removeProperty("animation");
+            for (let button of buttons) {
+                button.removeAttribute("disabled");
+                this.style.cssText = "scale: 1";
+            }
+        }, 1500)
     })
 }
 
