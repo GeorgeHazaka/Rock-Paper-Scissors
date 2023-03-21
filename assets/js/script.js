@@ -75,6 +75,7 @@ for (let button of buttons) {
                 playerDiv.appendChild(winningTeam[computerRandomWeapon + 1]);
                 removeComputer.push(computerDiv.appendChild(losingTeam[computerRandomWeapon]));
                 removePlayer.push(playerDiv.appendChild(winningTeam[computerRandomWeapon + 1]));
+                incrementPlayerScore();
             } else {
                 if (computerRandomWeapon === 2) {
                     computerDiv.appendChild(winningTeam[computerRandomWeapon + 1]);
@@ -85,6 +86,23 @@ for (let button of buttons) {
                 }
                 playerDiv.appendChild(losingTeam[computerRandomWeapon - 1]);
                 removePlayer.push(playerDiv.appendChild(losingTeam[computerRandomWeapon - 1]));
+                incrementComputerScore();
+            }
+        } else {
+            computerWeapon.style.display = "none";
+            playerWeapon.style.display = "none";
+            if (parseInt(this.getAttribute("data-choice")) < computerRandomWeapon) {
+                computerDiv.appendChild(losingTeam[computerRandomWeapon + 1]);
+                playerDiv.appendChild(winningTeam[computerRandomWeapon - 2]);
+                removeComputer.push(computerDiv.appendChild(losingTeam[computerRandomWeapon + 1]));
+                removePlayer.push(playerDiv.appendChild(winningTeam[computerRandomWeapon - 2]));
+                incrementPlayerScore();
+            } else {
+                computerDiv.appendChild(winningTeam[computerRandomWeapon]);
+                playerDiv.appendChild(losingTeam[computerRandomWeapon + 2]);
+                removeComputer.push(computerDiv.appendChild(winningTeam[computerRandomWeapon]));
+                removePlayer.push(playerDiv.appendChild(losingTeam[computerRandomWeapon + 2]));
+                incrementComputerScore();
             }
         }
     })
@@ -95,4 +113,20 @@ for (let button of buttons) {
  */
 function getComputerWeapon() {
     computerRandomWeapon = Math.floor(Math.random() * 3);
+}
+
+/**
+ * Gets the current player score from the DOM and increments it by 1
+ */
+function incrementPlayerScore() {
+    let oldScore = parseInt(document.getElementById("player-score-span").textContent);
+    document.getElementById("player-score-span").textContent = ++oldScore;
+}
+
+/**
+ * Gets the current computer score from the DOM and increments it by 1
+ */
+function incrementComputerScore() {
+    let oldScore = parseInt(document.getElementById("computer-score-span").textContent);
+    document.getElementById("computer-score-span").textContent = ++oldScore;
 }
