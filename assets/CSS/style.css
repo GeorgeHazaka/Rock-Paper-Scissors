@@ -83,3 +83,33 @@ h1 {
     width: 17vw;
     margin-top: 10%;
 }
+
+/* ---------- Footer */
+
+#player-score-div,
+#computer-score-div {
+    position: absolute;
+    bottom: 6vh;
+    letter-spacing: 3px;
+    font-size: 1.3vw;
+}
+
+#player-score-div {
+    left: 28%;
+}
+
+#computer-score-div {
+    right: 26%;
+}
+
+#player-score-span {
+    position: absolute;
+    margin-left: 5px;
+    color: greenyellow;
+}
+
+#computer-score-span {
+    position: absolute;
+    margin-left: 5px;
+    color: #FC3B00;
+}
