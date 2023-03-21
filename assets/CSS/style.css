@@ -103,13 +103,11 @@ h1 {
 }
 
 #player-score-span {
-    position: absolute;
     margin-left: 5px;
     color: greenyellow;
 }
 
 #computer-score-span {
-    position: absolute;
     margin-left: 5px;
     color: #FC3B00;
 }
