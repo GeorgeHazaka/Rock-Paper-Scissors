@@ -125,17 +125,33 @@ function getComputerWeapon() {
 }
 
 /**
- * Gets the current player score from the DOM and increments it by 1
+ * Gets the current player score from the DOM and increments it by 1 and then calls the playerWinningAnimation function
  */
 function incrementPlayerScore() {
     let oldScore = parseInt(document.getElementById("player-score-span").textContent);
     document.getElementById("player-score-span").textContent = ++oldScore;
+    playerWinnerAnimation();
 }
 
 /**
- * Gets the current computer score from the DOM and increments it by 1
+ * Gets the current computer score from the DOM and increments it by 1 and then calls the computerWinningAnimation function
  */
 function incrementComputerScore() {
     let oldScore = parseInt(document.getElementById("computer-score-span").textContent);
     document.getElementById("computer-score-span").textContent = ++oldScore;
+    computerWinnerAnimation()
+}
+
+/**
+ * Creates an animation called "left-to-right" for the winning player
+ */
+function playerWinnerAnimation() {
+    playerDiv.lastChild.style.cssText = "animation: left-to-right 1s ease;";
+}
+
+/**
+ * Creates an animation called "right-to-left" for the winning computer
+ */
+function computerWinnerAnimation() {
+    computerDiv.lastChild.style.cssText = "animation: right-to-left 1s ease;";
 }
