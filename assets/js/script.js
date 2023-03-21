@@ -41,6 +41,8 @@ losingTeam.push(rockLose, paperLose, scissorsLoseRight, scissorsLoseLeft);
 
 for (let button of buttons) {
     button.addEventListener("click", function () {
+        playerDiv.style.display = "block";
+        computerDiv.style.display = "block";
         getComputerWeapon();
         if (parseInt(this.getAttribute("data-choice")) === computerRandomWeapon) {
             drawDiv.style.cssText = "\
@@ -66,7 +68,24 @@ for (let button of buttons) {
             playerDiv.style.display = "none";
             computerDiv.style.display = "none";
         } else if (parseInt(this.getAttribute("data-choice")) - computerRandomWeapon === 1 || parseInt(this.getAttribute("data-choice")) - computerRandomWeapon === -1) {
-
+            playerWeapon.style.display = "none";
+            computerWeapon.style.display = "none";
+            if (parseInt(this.getAttribute("data-choice")) > computerRandomWeapon) {
+                computerDiv.appendChild(losingTeam[computerRandomWeapon]);
+                playerDiv.appendChild(winningTeam[computerRandomWeapon + 1]);
+                removeComputer.push(computerDiv.appendChild(losingTeam[computerRandomWeapon]));
+                removePlayer.push(playerDiv.appendChild(winningTeam[computerRandomWeapon + 1]));
+            } else {
+                if (computerRandomWeapon === 2) {
+                    computerDiv.appendChild(winningTeam[computerRandomWeapon + 1]);
+                    removeComputer.push(computerDiv.appendChild(winningTeam[computerRandomWeapon + 1]));
+                } else {
+                    computerDiv.appendChild(winningTeam[computerRandomWeapon]);
+                    removeComputer.push(computerDiv.appendChild(winningTeam[computerRandomWeapon]));
+                }
+                playerDiv.appendChild(losingTeam[computerRandomWeapon - 1]);
+                removePlayer.push(playerDiv.appendChild(losingTeam[computerRandomWeapon - 1]));
+            }
         }
     })
 }
