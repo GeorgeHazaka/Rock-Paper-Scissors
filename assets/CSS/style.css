@@ -23,7 +23,7 @@ h1 {
     letter-spacing: 5px;
 }
 
-/* ---------- Section */
+/* ---------- Section, Weapons div */
 
 #game-area h2 {
     font-size: 2vw;
@@ -57,4 +57,29 @@ h1 {
 
 .button-modify img:hover {
     transform: rotate(360deg);
+}
+
+/* ---------- Section, Player weapon div */
+
+#player-weapon-div {
+    float: left;
+    margin-left: 25%;
+    text-align: center;
+    margin-top: 8.33vh;
+    font-size: 2vw;
+}
+
+#computer-weapon-div {
+    float: right;
+    margin-right: 25%;
+    text-align: center;
+    margin-top: 8.33vh;
+    font-size: 2vw;
+}
+
+#player-weapon-div img,
+#computer-weapon-div img {
+    height: 27vh;
+    width: 17vw;
+    margin-top: 10%;
 }
