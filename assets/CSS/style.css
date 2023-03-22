@@ -59,7 +59,7 @@ h1 {
     transform: rotate(360deg);
 }
 
-/* ---------- Section, Player weapon div */
+/* ---------- Section, Player weapon and computer weapon */
 
 #player-weapon-div {
     float: left;
