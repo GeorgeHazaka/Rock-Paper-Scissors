@@ -28,7 +28,7 @@ h1 {
 #game-area h2 {
     font-size: 2vw;
     text-align: center;
-    margin-top: 5h;
+    margin-top: 5vh;
     letter-spacing: 2px;
 }
 
@@ -158,23 +158,23 @@ h1 {
 
 @keyframes draw-rotation-animation {
     16% {
-        rotate: 5deg;
+        transform: rotate(5deg);
     }
 
     33% {
-        rotate: -5deg;
+        transform: rotate(-5deg);
     }
 
     50% {
-        rotate: 5deg;
+        transform: rotate(5deg);
     }
 
     67% {
-        rotate: -5deg;
+        transform: rotate(-5deg);
     }
 
     84% {
-        rotate: 5deg;
+        transform: rotate(5deg);
     }
 }
 
