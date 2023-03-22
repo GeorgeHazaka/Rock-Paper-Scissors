@@ -85,38 +85,28 @@ for (let button of buttons) {
             playerWeapon.style.display = "none";
             computerWeapon.style.display = "none";
             if (parseInt(this.getAttribute("data-choice")) > computerRandomWeapon) {
-                computerDiv.appendChild(losingTeam[computerRandomWeapon]);
-                playerDiv.appendChild(winningTeam[computerRandomWeapon + 1]);
-                removeComputer.push(computerDiv.appendChild(losingTeam[computerRandomWeapon]));
-                removePlayer.push(playerDiv.appendChild(winningTeam[computerRandomWeapon + 1]));
+                playerChild(winningTeam, computerRandomWeapon + 1);
+                computerChild(losingTeam, computerRandomWeapon);
                 incrementPlayerScore();
             } else {
                 if (computerRandomWeapon === 2) {
-                    console.log(winningTeam[computerRandomWeapon + 1]);
-                    computerDiv.appendChild(winningTeam[computerRandomWeapon + 1]);
-                    removeComputer.push(computerDiv.appendChild(winningTeam[computerRandomWeapon + 1]));
+                    computerChild(winningTeam, computerRandomWeapon + 1);
                 } else {
-                    computerDiv.appendChild(winningTeam[computerRandomWeapon]);
-                    removeComputer.push(computerDiv.appendChild(winningTeam[computerRandomWeapon]));
+                    computerChild(winningTeam, computerRandomWeapon);
                 }
-                playerDiv.appendChild(losingTeam[computerRandomWeapon - 1]);
-                removePlayer.push(playerDiv.appendChild(losingTeam[computerRandomWeapon - 1]));
+                playerChild(losingTeam, computerRandomWeapon - 1);
                 incrementComputerScore();
             }
         } else {
             computerWeapon.style.display = "none";
             playerWeapon.style.display = "none";
             if (parseInt(this.getAttribute("data-choice")) < computerRandomWeapon) {
-                computerDiv.appendChild(losingTeam[computerRandomWeapon + 1]);
-                playerDiv.appendChild(winningTeam[computerRandomWeapon - 2]);
-                removeComputer.push(computerDiv.appendChild(losingTeam[computerRandomWeapon + 1]));
-                removePlayer.push(playerDiv.appendChild(winningTeam[computerRandomWeapon - 2]));
+                playerChild(winningTeam, computerRandomWeapon - 2);
+                computerChild(losingTeam, computerRandomWeapon + 1);
                 incrementPlayerScore();
             } else {
-                computerDiv.appendChild(winningTeam[computerRandomWeapon]);
-                playerDiv.appendChild(losingTeam[computerRandomWeapon + 2]);
-                removeComputer.push(computerDiv.appendChild(winningTeam[computerRandomWeapon]));
-                removePlayer.push(playerDiv.appendChild(losingTeam[computerRandomWeapon + 2]));
+                playerChild(losingTeam, computerRandomWeapon + 2);
+                computerChild(winningTeam, computerRandomWeapon);
                 incrementComputerScore();
             }
         }
@@ -125,7 +115,7 @@ for (let button of buttons) {
         }
 
         /**
-         * Creates a delay so that you can click a button once after 1500 ms and to recreate the animation of number-scale-increasing
+         *  Creates a delay so that you can click a button once after 1500 ms and to recreate the animation of number-scale-increasing
          */
         setTimeout(() => {
             drawDiv.style.removeProperty("animation");
@@ -140,14 +130,14 @@ for (let button of buttons) {
 }
 
 /**
- * Gets a random computer weapon [0, 1, 2]
+ *  Gets a random computer weapon [0, 1, 2]
  */
 function getComputerWeapon() {
     computerRandomWeapon = Math.floor(Math.random() * 3);
 }
 
 /**
- * Gets the current player score from the DOM and increments it by 1 and then calls the playerWinningAnimation and the playerScoreAnimation functions
+ *  Gets the current player score from the DOM and increments it by 1 and then calls the playerWinningAnimation and the playerScoreAnimation functions
  */
 function incrementPlayerScore() {
     let oldScore = parseInt(document.getElementById("player-score-span").textContent);
@@ -157,7 +147,7 @@ function incrementPlayerScore() {
 }
 
 /**
- * Gets the current computer score from the DOM and increments it by 1 and then calls the computerWinningAnimation and the computerScoreAnimation functions
+ *  Gets the current computer score from the DOM and increments it by 1 and then calls the computerWinningAnimation and the computerScoreAnimation functions
  */
 function incrementComputerScore() {
     let oldScore = parseInt(document.getElementById("computer-score-span").textContent);
@@ -167,36 +157,52 @@ function incrementComputerScore() {
 }
 
 /**
- * Creates an animation called "left-to-right" for the winning player
+ *  Creates an animation called "left-to-right" for the winning player
  */
 function playerWinnerAnimation() {
     playerDiv.lastChild.style.cssText = "animation: left-to-right 1s ease;";
 }
 
 /**
- * Creates an animation called "right-to-left" for the winning computer
+ *  Creates an animation called "right-to-left" for the winning computer
  */
 function computerWinnerAnimation() {
-    computerDiv.lastChild.style.cssText = "animation: right-to-left 1s ease;";
+    computerDiv.lastChild.style.animation = "right-to-left 1s ease";
 }
 
 /**
- * Creates an animation called "draw-rotation-animation" for the draw message div
+ *  Creates an animation called "draw-rotation-animation" for the draw message div
  */
 function drawAnimation() {
     drawDiv.style.animation = "draw-rotation-animation .7s ease-out";
 }
 
 /**
- * Creates an animation called "number-scale-increasing" for the player score increment
+ *  Creates an animation called "number-scale-increasing" for the player score increment
  */
 function playerScoreAnimation() {
     playerScore.style.cssText = "animation: number-scale-increasing 1s ease";
 }
 
 /**
- * Creates an animation called "number-scale-increasing" for the computer score increment
+ *  Creates an animation called "number-scale-increasing" for the computer score increment
  */
 function computerScoreAnimation() {
     computerScore.style.cssText = "animation: number-scale-increasing 1s ease";
+}
+
+/**
+ *  Appends the player's chosen weapon (image) as a child to the playerDiv and then add that child to the removePlayer array
+ */
+function playerChild(team, player) {
+    playerDiv.appendChild(team[player]);
+    removePlayer.push(playerDiv.appendChild(team[player]));
+}
+
+/**
+ *  Appends the computer's chosen weapon (image) as a child to the computerDiv and then add that child to the removeComputer array
+ */
+function computerChild(team, computer) {
+    computerDiv.appendChild(team[computer]);
+    removeComputer.push(computerDiv.appendChild(team[computer]));
 }
