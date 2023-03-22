@@ -80,6 +80,7 @@ for (let button of buttons) {
             drawDiv.appendChild(drawPara);
             playerDiv.style.display = "none";
             computerDiv.style.display = "none";
+            drawAnimation();
         } else if (parseInt(this.getAttribute("data-choice")) - computerRandomWeapon === 1 || parseInt(this.getAttribute("data-choice")) - computerRandomWeapon === -1) {
             playerWeapon.style.display = "none";
             computerWeapon.style.display = "none";
@@ -127,6 +128,7 @@ for (let button of buttons) {
          * Creates a delay so that you can click a button once after 1500 ms and to recreate the animation of number-scale-increasing
          */
         setTimeout(() => {
+            drawDiv.style.removeProperty("animation");
             playerScore.style.removeProperty("animation");
             computerScore.style.removeProperty("animation");
             for (let button of buttons) {
@@ -176,6 +178,10 @@ function playerWinnerAnimation() {
  */
 function computerWinnerAnimation() {
     computerDiv.lastChild.style.cssText = "animation: right-to-left 1s ease;";
+}
+
+function drawAnimation() {
+    drawDiv.style.animation = "draw-animation .7s ease-out";
 }
 
 /**

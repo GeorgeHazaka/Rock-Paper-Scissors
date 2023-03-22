@@ -154,6 +154,32 @@ h1 {
     color: #FC3B00;
 }
 
+/* Draw message div rotation animation */
+
+@keyframes draw-animation {
+    16% {
+        rotate: 5deg;
+    }
+
+    33% {
+        rotate: -5deg;
+    }
+
+    50% {
+        rotate: 5deg;
+    }
+
+    67% {
+        rotate: -5deg;
+    }
+
+    84% {
+        rotate: 5deg;
+    }
+}
+
+/* Score number scale increasing animation */
+
 @keyframes number-scale-increasing {
     0% {
         transform: scale(1);
