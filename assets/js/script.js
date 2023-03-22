@@ -180,8 +180,11 @@ function computerWinnerAnimation() {
     computerDiv.lastChild.style.cssText = "animation: right-to-left 1s ease;";
 }
 
+/**
+ * Creates an animation called "draw-rotation-animation" for the draw message div
+ */
 function drawAnimation() {
-    drawDiv.style.animation = "draw-animation .7s ease-out";
+    drawDiv.style.animation = "draw-rotation-animation .7s ease-out";
 }
 
 /**

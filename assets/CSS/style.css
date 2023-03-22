@@ -156,7 +156,7 @@ h1 {
 
 /* Draw message div rotation animation */
 
-@keyframes draw-animation {
+@keyframes draw-rotation-animation {
     16% {
         rotate: 5deg;
     }
