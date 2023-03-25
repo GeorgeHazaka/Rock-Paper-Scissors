@@ -99,7 +99,7 @@ for (let button of buttons) {
         }
 
         /**
-         *  Creates a delay so that you can click a button once after 1500 ms and to recreate the animation of number-scale-increasing
+         *  Creates a delay so that you can click a button once after 1500 ms and removes all the animation properties
          */
         setTimeout(() => {
             drawDiv.style.removeProperty("animation");
