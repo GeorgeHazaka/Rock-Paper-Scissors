@@ -2,13 +2,14 @@ const buttons = document.getElementsByTagName("button");
 const playerDiv = document.getElementById("player-weapon-div");
 const computerDiv = document.getElementById("computer-weapon-div");
 const drawDiv = document.getElementById("draw-message");
-const drawPara = document.createElement("p");
 const playerWeapon = document.getElementById("player-weapon-image");
 const computerWeapon = document.getElementById("computer-weapon-image");
 const playerScore = document.getElementById("player-score-span");
 const computerScore = document.getElementById("computer-score-span");
 
 let computerRandomWeapon;
+
+const drawPara = document.createElement("p");
 
 const rockWin = document.createElement("img");
 const rockLose = document.createElement("img");
@@ -110,8 +111,8 @@ for (let button of buttons) {
                 button.removeAttribute("disabled");
                 this.style.cssText = "scale: 1";
             }
-        }, 1500)
-    })
+        }, 1500);
+    });
 }
 
 /**
@@ -130,7 +131,7 @@ function incrementPlayerScore() {
     let oldScore = parseInt(document.getElementById("player-score-span").textContent);
     document.getElementById("player-score-span").textContent = ++oldScore;
     playerWinnerAnimation();
-    playerScoreAnimation()
+    playerScoreAnimation();
 }
 
 /**

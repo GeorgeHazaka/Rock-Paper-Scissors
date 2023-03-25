@@ -181,13 +181,13 @@ h1 {
 #player-score-span {
     position: absolute;
     margin-left: 5px;
-    color: greenyellow;
+    color: #A8FC2A;
 }
 
 #computer-score-span {
     position: absolute;
     margin-left: 5px;
-    color: #FC3B00;
+    color: #fc0303;
 }
 
 /* Score number scale increasing animation */
