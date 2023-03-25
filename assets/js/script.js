@@ -44,9 +44,6 @@ losingTeam.push(rockLose, paperLose, scissorsLoseRight, scissorsLoseLeft);
 
 for (let button of buttons) {
     button.addEventListener("click", function () {
-        this.style.scale = "1.7";
-        playerDiv.style.display = "block";
-        computerDiv.style.display = "block";
         if (removePlayer.length > 0) {
             playerDiv.removeChild(removePlayer[0]);
             removePlayer.pop();
@@ -55,6 +52,9 @@ for (let button of buttons) {
             computerDiv.removeChild(removeComputer[0]);
             removeComputer.pop();
         }
+        this.style.scale = "1.8";
+        playerDiv.style.display = "block";
+        computerDiv.style.display = "block";
         drawDiv.classList.remove("draw-div-styles");
         drawPara.innerHTML = "";
         getComputerWeapon();
