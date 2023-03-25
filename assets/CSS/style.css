@@ -89,9 +89,6 @@ h1 {
 /* Image attacking from left to right animation */
 
 @keyframes left-to-right {
-    0% {
-        transform: translateX(0);
-    }
 
     25% {
         transform: translateX(-30%);
@@ -101,17 +98,11 @@ h1 {
         transform: translateX(130%);
     }
 
-    100% {
-        transform: translateX(0);
-    }
 }
 
 /* Image attacking from right to left animation */
 
 @keyframes right-to-left {
-    0% {
-        transform: translateX(0);
-    }
 
     25% {
         transform: translateX(30%);
@@ -121,9 +112,6 @@ h1 {
         transform: translateX(-130%);
     }
 
-    100% {
-        transform: translateX(0);
-    }
 }
 
 /* ---------- Section, Draw message */
@@ -147,6 +135,7 @@ h1 {
 /* Draw message div rotation animation */
 
 @keyframes draw-rotation-animation {
+
     16% {
         transform: rotate(5deg);
     }
@@ -166,6 +155,7 @@ h1 {
     84% {
         transform: rotate(5deg);
     }
+
 }
 
 /* ---------- Footer */
@@ -201,18 +191,12 @@ h1 {
 /* Score number scale increasing animation */
 
 @keyframes number-scale-increasing {
-    0% {
-        transform: scale(1);
-    }
 
     50% {
         transform: scale(3);
         margin-left: 20%;
     }
 
-    100% {
-        transform: scale(1);
-    }
 }
 
 /* Media queries */
