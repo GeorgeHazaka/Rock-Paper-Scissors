@@ -23,7 +23,7 @@ h1 {
     letter-spacing: 5px;
 }
 
-/* ---------- Section, Weapons div */
+/* ---------- Section */
 
 #game-area h2 {
     font-size: 2vw;
@@ -31,6 +31,8 @@ h1 {
     margin-top: 5vh;
     letter-spacing: 2px;
 }
+
+/* ---------- Section, Weapons div */
 
 #weapons-div {
     margin-top: 6.7vh;
@@ -193,4 +195,154 @@ h1 {
     100% {
         transform: scale(1);
     }
+}
+
+/* Media queries */
+
+/* For larger to medium screens size from 1100px wide and down */ 
+
+@media screen and (max-width: 1100px) {
+
+    /* ---------- Section */
+
+    #game-area h2 {
+        font-size: 2.5vw;
+    }
+
+    #player-weapon-div,
+    #computer-weapon-div {
+        margin-top: 10%;
+    }
+
+}
+
+/* For medium screens size from 800px wide and down */
+
+@media screen and (max-width: 800px) {
+
+    /* ---------- Section */
+
+    #game-area h2 {
+        font-size: 2.8vw;
+    }
+
+    #player-weapon-div,
+    #computer-weapon-div {
+        font-size: 2.4vw;
+    }
+
+    #player-score-div,
+    #computer-score-div {
+        bottom: 16vh;
+        letter-spacing: 0px;
+        font-size: 2.3vw;
+    }
+
+    /* ---------- Footer */
+
+    #player-score-div {
+        left: 26%
+    }
+
+    #computer-score-div {
+        right: 24%
+    }
+
+}
+
+/* For small screens size from 600px wide and down */
+
+@media screen and (max-width: 600px) {
+
+    /* ---------- Section */
+
+    #game-area h2 {
+        font-size: 3.2vw;
+    }
+
+    .button-modify img {
+        height: 20vh;
+        width: 14vw;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+        object-fit: contain;
+    }
+
+    #player-weapon-div,
+    #computer-weapon-div {
+        font-size: 3vw;
+    }
+
+    /* ---------- Footer */
+
+    #player-score-div,
+    #computer-score-div {
+        bottom: 20vh;
+        font-size: 2.6vw;
+    }
+
+    #player-score-div {
+        left: 25%
+    }
+
+    #computer-score-div {
+        right: 22%
+    }
+
+}
+
+/* For smaller screens size from 450px wide and down */
+
+@media screen and (max-width: 450px) {
+
+    /* ---------- Section */
+
+    #game-area h2 {
+        font-size: 3.7vw;
+    }
+
+    #player-weapon-div img,
+    #computer-weapon-div img {
+        height: 20vh;
+        width: 20vw;
+    }
+
+    /* ---------- Footer */
+
+    #player-score-div,
+    #computer-score-div {
+        bottom: 30vh;
+        font-size: 3vw;
+    }
+
+    #player-score-div {
+        left: 24%
+    }
+
+    #computer-score-div {
+        right: 22%
+    }
+
+}
+
+/* For smaller screens size from 400px wide and down */
+
+@media screen and (max-width: 400px) {
+
+    /* ---------- Footer */
+
+    #player-score-div,
+    #computer-score-div {
+        bottom: 35vh;
+        font-size: 3vw;
+    }
+
+    #player-score-div {
+        left: 25%
+    }
+
+    #computer-score-div {
+        right: 24%
+    }
+
 }
