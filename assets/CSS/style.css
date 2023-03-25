@@ -55,6 +55,7 @@ h1 {
     width: 5.84vw;
     cursor: pointer;
     transition: all .5s ease-in-out;
+    object-fit: contain;
 }
 
 .button-modify img:hover {
@@ -84,6 +85,7 @@ h1 {
     height: 27vh;
     width: 17vw;
     margin-top: 10%;
+    object-fit: contain;
 }
 
 /* Image attacking from left to right animation */
