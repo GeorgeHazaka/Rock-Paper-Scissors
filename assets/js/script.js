@@ -44,10 +44,9 @@ losingTeam.push(rockLose, paperLose, scissorsLoseRight, scissorsLoseLeft);
 
 for (let button of buttons) {
     button.addEventListener("click", function () {
+        this.style.scale = "1.7";
         playerDiv.style.display = "block";
         computerDiv.style.display = "block";
-        drawDiv.style.display = "none";
-        this.style.scale = "2";
         if (removePlayer.length > 0) {
             playerDiv.removeChild(removePlayer[0]);
             removePlayer.pop();
@@ -56,27 +55,12 @@ for (let button of buttons) {
             computerDiv.removeChild(removeComputer[0]);
             removeComputer.pop();
         }
+        drawDiv.classList.remove("draw-div-styles");
+        drawPara.innerHTML = "";
         getComputerWeapon();
         if (parseInt(this.getAttribute("data-choice")) === computerRandomWeapon) {
-            drawDiv.style.cssText = "\
-                font-size: 1.6vw;\
-                color: #383502;\
-                background-color: #E0DFD2;\
-                width: 40vw;\
-                height: 37vh;\
-                left: 10vw;\
-                margin-top: 8.33vh;\
-                margin-left: 20%;\
-                position: absolute;\
-                opacity: 0.5;\
-                border-radius: 50px 50px 50% 50%;\
-                z-index: 1;\
-            ";
+            drawDiv.classList.add("draw-div-styles");
             drawPara.innerHTML = `It's A Draw, Computer chose: ${this.ariaLabel}`;
-            drawPara.style.cssText = "\
-                text-align: center;\
-                margin-top: 16vh;\
-            ";
             drawDiv.appendChild(drawPara);
             playerDiv.style.display = "none";
             computerDiv.style.display = "none";
