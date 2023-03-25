@@ -203,9 +203,9 @@ h1 {
 
 /* Media queries */
 
-/* For larger to medium screens size from 1100px wide and down */ 
+/* For larger to medium screens size from 1200px wide and down */ 
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1200px) {
 
     /* ---------- Section */
 
@@ -218,11 +218,19 @@ h1 {
         margin-top: 10%;
     }
 
+    /* ---------- Footer */
+
+    #player-score-div,
+    #computer-score-div {
+        letter-spacing: 2px;
+        font-size: 2vw;
+    }
+
 }
 
 /* For medium screens size from 800px wide and down */
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 840px) {
 
     /* ---------- Section */
 
@@ -247,7 +255,7 @@ h1 {
     #player-score-div,
     #computer-score-div {
         bottom: 16vh;
-        letter-spacing: 0px;
+        letter-spacing: 1px;
         font-size: 2.3vw;
     }
 
@@ -332,8 +340,8 @@ h1 {
     .draw-div-styles {
         font-size: 17px;
         width: 370px;
-        height: 220px;
-        line-height: 200px;
+        height: 160px;
+        line-height: 150px;
         left: calc(50% - 370px / 2);
         margin-top: 0;
     }
@@ -342,8 +350,9 @@ h1 {
 
     #player-score-div,
     #computer-score-div {
-        bottom: 30vh;
+        bottom: 19vh;
         font-size: 3vw;
+        letter-spacing: 0;
     }
 
     #player-score-div {
@@ -365,8 +374,8 @@ h1 {
     .draw-div-styles {
         font-size: 15px;
         width: 310px;
-        height: 190px;
-        line-height: 180px;
+        height: 135px;
+        line-height: 120px;
         left: calc(50% - 310px / 2);
     }
 
@@ -374,7 +383,7 @@ h1 {
 
     #player-score-div,
     #computer-score-div {
-        bottom: 35vh;
+        bottom: 20vh;
         font-size: 3vw;
     }
 
