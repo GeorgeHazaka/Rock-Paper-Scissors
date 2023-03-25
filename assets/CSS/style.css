@@ -126,6 +126,8 @@ h1 {
     }
 }
 
+/* ---------- Section, Draw message */
+
 .draw-div-styles {
     position: absolute;
     font-size: 30px;
@@ -140,6 +142,30 @@ h1 {
     opacity: 0.5;
     border-radius: 50px 50px 50% 50%;
     z-index: 1;
+}
+
+/* Draw message div rotation animation */
+
+@keyframes draw-rotation-animation {
+    16% {
+        transform: rotate(5deg);
+    }
+
+    33% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    67% {
+        transform: rotate(-5deg);
+    }
+
+    84% {
+        transform: rotate(5deg);
+    }
 }
 
 /* ---------- Footer */
@@ -170,30 +196,6 @@ h1 {
     position: absolute;
     margin-left: 5px;
     color: #FC3B00;
-}
-
-/* Draw message div rotation animation */
-
-@keyframes draw-rotation-animation {
-    16% {
-        transform: rotate(5deg);
-    }
-
-    33% {
-        transform: rotate(-5deg);
-    }
-
-    50% {
-        transform: rotate(5deg);
-    }
-
-    67% {
-        transform: rotate(-5deg);
-    }
-
-    84% {
-        transform: rotate(5deg);
-    }
 }
 
 /* Score number scale increasing animation */
@@ -247,6 +249,15 @@ h1 {
         font-size: 2.4vw;
     }
 
+    .draw-div-styles {
+        font-size: 25px;
+        width: 550px;
+        height: 280px;
+        line-height: 260px;
+        left: calc(50% - 550px / 2);
+        margin-top: 4vh;
+    }
+
     #player-score-div,
     #computer-score-div {
         bottom: 16vh;
@@ -289,6 +300,15 @@ h1 {
         font-size: 3vw;
     }
 
+    .draw-div-styles {
+        font-size: 20px;
+        width: 420px;
+        height: 250px;
+        line-height: 235px;
+        left: calc(50% - 420px / 2);
+        margin-top: 1vh;
+    }
+
     /* ---------- Footer */
 
     #player-score-div,
@@ -323,6 +343,15 @@ h1 {
         width: 20vw;
     }
 
+    .draw-div-styles {
+        font-size: 17px;
+        width: 370px;
+        height: 220px;
+        line-height: 200px;
+        left: calc(50% - 370px / 2);
+        margin-top: 0;
+    }
+
     /* ---------- Footer */
 
     #player-score-div,
@@ -344,6 +373,16 @@ h1 {
 /* For smaller screens size from 400px wide and down */
 
 @media screen and (max-width: 400px) {
+
+    /* ---------- Section */
+
+    .draw-div-styles {
+        font-size: 15px;
+        width: 310px;
+        height: 190px;
+        line-height: 180px;
+        left: calc(50% - 310px / 2);
+    }
 
     /* ---------- Footer */
 
