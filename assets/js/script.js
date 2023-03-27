@@ -101,7 +101,7 @@ for (let button of buttons) {
 
         /**
          *  Creates a delay so that you can click a button once after 1500 ms
-         *  Removes all animation properties
+         *  Then removes all animation properties
          */
         setTimeout(() => {
             drawDiv.style.removeProperty("animation");
@@ -124,8 +124,8 @@ function getComputerWeapon() {
 
 /**
  *  Gets the current player score from the DOM and increments it by 1
- *  Calls playerWinnerAnimation() function
- *  Calls playerScoreAnimation() function
+ *  Then calls playerWinnerAnimation() function
+ *  Then calls playerScoreAnimation() function
  */
 function incrementPlayerScore() {
     let oldScore = parseInt(document.getElementById("player-score-span").textContent);
@@ -136,8 +136,8 @@ function incrementPlayerScore() {
 
 /**
  *  Gets the current computer score from the DOM and increments it by 1
- *  Calls computerWinnerAnimation() function
- *  Calls computerScoreAnimation() function
+ *  Then calls computerWinnerAnimation() function
+ *  Then calls computerScoreAnimation() function
  */
 function incrementComputerScore() {
     let oldScore = parseInt(document.getElementById("computer-score-span").textContent);
@@ -183,7 +183,7 @@ function computerScoreAnimation() {
 
 /**
  *  Appends the player's chosen weapon (image) as a child to the playerDiv
- *  Adds that child to the removePlayer array
+ *  Then adds that child to the removePlayer array
  */
 function playerChild(team, player) {
     playerDiv.appendChild(team[player]);
@@ -192,7 +192,7 @@ function playerChild(team, player) {
 
 /**
  *  Appends the computer's chosen weapon (image) as a child to the computerDiv
- *  Adds that child to the removeComputer array
+ *  Then adds that child to the removeComputer array
  */
 function computerChild(team, computer) {
     computerDiv.appendChild(team[computer]);
