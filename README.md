@@ -188,13 +188,19 @@ The live link can be found here - [Rock, Paper, Scissors](https://georgehazaka.g
 
 ### Media
 
-| Images created in [Canva](https://www.canva.com/)                  | Images taken from open source site                                 |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| ![rock](assets/images/Rock.png)                                    | ![rock, paper and scissors](assets/images/rock-paper-scissors.png) |
-| ![angry rock](assets/images/Win-Rock.png)                          | ![red nature in autumn](assets/images/red-nature-darker.jpg)       |
-| ![dizzy rock](assets/images/Rock.png)                              |  |
-| ![paper](assets/images/Rock.png)                                   |  |
-| ![angry paper](assets/images/Rock.png)                             |  |
+| Images created in [Canva](https://www.canva.com/)                       | Images taken from open source sites                                |
+| ----------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| ![rock](assets/images/Rock.png)                                         | ![rock, paper and scissors](assets/images/rock-paper-scissors.png) |
+| ![angry rock](assets/images/Win-Rock.png)                               | ![red nature in autumn](assets/images/red-nature-darker.jpg)       |
+| ![dizzy rock](assets/images/Lose-Rock.png)                              |  |
+| ![paper](assets/images/Paper.png)                                       |  |
+| ![angry paper](assets/images/Win-Paper.png)                             |  |
+| ![sad paper](assets/images/Lose-Paper.png)                              |  |
+| ![scissors](assets/images/Scissors.png)                                 |  |
+| ![angry scissors heading right](assets/images/Win-Scissors-Right.png)   |  |
+| ![angry scissors heading left](assets/images/Win-Scissors-Left.png)     |  |
+| ![broken scissors heading right](assets/images/Lose-Scissors-Right.png) |  |
+| ![broken scissors heading left](assets/images/Lose-Scissors-Left.png)   |  |
 
 
 

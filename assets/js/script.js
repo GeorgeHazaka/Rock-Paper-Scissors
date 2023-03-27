@@ -29,7 +29,7 @@ const imagesSourcesArray = [
     "assets/images/Win-Scissors-Right.png",
     "assets/images/Win-Scissors-Left.png",
     "assets/images/Lose-Scissors-Right.png",
-    "assets/images/Lose-Scissors-left.png"
+    "assets/images/Lose-Scissors-Left.png"
 ];
 const removePlayer = [];
 const removeComputer = [];
