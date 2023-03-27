@@ -7,6 +7,36 @@ Users of this application will be able to experience this game with some images 
 
 ![Several screen sizes devices showing how the website looks in each of them](documentation/responsive-rock-paper-scissors.png)
 
+## Table of Contents
+----
+
++ [Design](#design "Design")
+    + [Flow Diagram](#flow-diagram "Flow Diagram")
+    + [Wireframes](#wireframes "Wireframes")
+    + [Colour Scheme](#colour-scheme "Colour Scheme")
+    + [Typography](#typography "Typography")
++ [Features](#features "Features")
+    + [Existing Features](#existing-features "Existing Features")
+        + [The Header](#the-header "The Header")
+        + [The Section](#the-section "The Section")
+            + [Weapons Area](#weapons-area "Weapons Area")
+            + [Fighting Area](#fighting-area "Fighting Area")
+            + [Draw Message Area](#draw-message-area "Draw Message Area")
+        + [The Footer](#the-footer "The Footer")
+    + [Features Left to Implement](#features-left-to-implement "Features Left to Implement")
++ [Testing](#testing "Testing")
+    + [Manual Testing](#manual-testing "Manual Testing")
+        + [Buttons Testing](#buttons-testing "Buttons Testing")
+        + [Draw Message Testing](#draw-message-testing "Draw Message Testing")
+        + [Winning Animation Testing](#winning-animation-testing "Winning Animation Testing")
+        + [Losing Animation Testing](#losing-animation-testing "Losing Animation Testing")
+    + [Validator Testing](#validator-testing "Validator Testing")
+    + [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
++ [Deployment](#deployment "Deployment")
++ [Credits](#credits "Credits")
+    + [Content](#content "Content")
+    + [Media](#media "Media")
+
 ## Design
 ----
 
@@ -192,15 +222,15 @@ The live link can be found here - [Rock, Paper, Scissors](https://georgehazaka.g
 | ----------------------------------------------------------------------- | ------------------------------------------------------------------ |
 | ![rock](assets/images/Rock.png)                                         | ![rock, paper and scissors](assets/images/rock-paper-scissors.png) |
 | ![angry rock](assets/images/Win-Rock.png)                               | ![red nature in autumn](assets/images/red-nature-darker.jpg)       |
-| ![dizzy rock](assets/images/Lose-Rock.png)                              |  |
-| ![paper](assets/images/Paper.png)                                       |  |
-| ![angry paper](assets/images/Win-Paper.png)                             |  |
-| ![sad paper](assets/images/Lose-Paper.png)                              |  |
-| ![scissors](assets/images/Scissors.png)                                 |  |
-| ![angry scissors heading right](assets/images/Win-Scissors-Right.png)   |  |
-| ![angry scissors heading left](assets/images/Win-Scissors-Left.png)     |  |
-| ![broken scissors heading right](assets/images/Lose-Scissors-Right.png) |  |
-| ![broken scissors heading left](assets/images/Lose-Scissors-Left.png)   |  |
+| ![dizzy rock](assets/images/Lose-Rock.png)                              |                                                                    |
+| ![paper](assets/images/Paper.png)                                       |                                                                    |
+| ![angry paper](assets/images/Win-Paper.png)                             |                                                                    |
+| ![sad paper](assets/images/Lose-Paper.png)                              |                                                                    |
+| ![scissors](assets/images/Scissors.png)                                 |                                                                    |
+| ![angry scissors heading right](assets/images/Win-Scissors-Right.png)   |                                                                    |
+| ![angry scissors heading left](assets/images/Win-Scissors-Left.png)     |                                                                    |
+| ![broken scissors heading right](assets/images/Lose-Scissors-Right.png) |                                                                    |
+| ![broken scissors heading left](assets/images/Lose-Scissors-Left.png)   |                                                                    |
 
 
 
