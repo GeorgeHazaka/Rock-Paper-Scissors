@@ -115,6 +115,19 @@ To make this application seem like a playful application, these two fonts were c
 + Add an online feature so that a player can play vs another player instead of a computer.
 + Add difficulty options when playing against computer.
 
+## User Experience
+----
++ **User Story 001:** as a user I want to start playing the game.
+    + **Tasks:** click on one of the weapons(images) underneath the heading which are (Rock, Paper, Scissors).
++ **User Story 002:** as a user I want to pick Rock as my weapon.
+    + **Tasks:** click on the rock button(image).
++ **User Story 003:** as a user I want to pick Paper as my weapon.
+    + **Tasks:** click on the paper button(image).
++ **User Story 004:** as a user I want to pick Scissors as my weapon.
+    + **Tasks:** click on the scissors button(image).
++ **User Story 005:** as a user I want to know what is my score and the computer's score.
+    + **Tasks:** on the very bottom of the site you can see "Your Score:" and next to it "Computer's Score".
+
 ## Testing
 ----
 + I tested that the page work in different browsers: Firefox, Brave, Chrome, Microsoft Edge, Safari.
@@ -209,8 +222,8 @@ The live link can be found here - [Rock, Paper, Scissors](https://georgehazaka.g
 
 ### Content
 
-+ The idea of the Rock, Paper, Scissors website was taken from Project Portfolio > [Portfolio 2](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+JSE_PAGPPF+2021_Q2/courseware/30137de05cd847d1a6b6d2c7338c4655/c3bd296fe9d643af86e76e830e1470dd/) > Portfolio Project Scope video.
-+ The code of the incrementPlayerScore() and the incrementComputerScore() functions are taken from Love Maths Walkthrough Project > [Displaying The Question and Getting The Answer](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/8775beaed6ed403d92318845af971b30/?child=first) > Updating The Scores video.
++ The idea of the Rock, Paper, Scissors website was taken from Project Portfolio –> [Portfolio 2](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+JSE_PAGPPF+2021_Q2/courseware/30137de05cd847d1a6b6d2c7338c4655/c3bd296fe9d643af86e76e830e1470dd/) –> Portfolio Project Scope video.
++ The code of the incrementPlayerScore() and the incrementComputerScore() functions are taken from Love Maths Walkthrough Project –> [Displaying The Question and Getting The Answer](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LM101+2021_T1/courseware/2d651bf3f23e48aeb9b9218871912b2e/8775beaed6ed403d92318845af971b30/?child=first) –> Updating The Scores video.
 ``` 
     let oldScore = parseInt(document.getElementById("computer-score-span").textContent);
     document.getElementById("computer-score-span").textContent = ++oldScore;
