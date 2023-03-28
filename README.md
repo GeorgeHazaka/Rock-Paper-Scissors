@@ -44,7 +44,7 @@ Users of this application will be able to experience this game with some images 
 
 To structure and aid in creating the website, a basic flow diagram was created which is linked below.
 
-[Flow Diagram]()
+[Flow Diagram](documentation/Rock-Paper-Scissors-diagram.pdf)
 
 ### Wireframes
 
