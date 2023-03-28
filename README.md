@@ -50,7 +50,7 @@ To structure and aid in creating the website, a basic flow diagram was created w
 
 Please see below, a link to wireframes for the site layout.
 
-[Wireframes]()
+[Wireframes](documentation/Rock-Paper-Scissors-wireframes.pdf)
 
 ### Colour Scheme
 
