@@ -178,12 +178,12 @@ To make this application seem like a playful application, these two fonts were c
         + Largest function has 42 statements in it, while the median is 1.
         + The most complex function has a cyclomatic complexity value of 10 while the median is 1.
     + 37 warnings were returned:
-        + 23 x 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz). Lines(1 - 8, 12, 14 - 21, 23, 24, 34 - 37).
-        +  7 x 'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz). Lines (10, 39, 46, 98, 110, 131, 143).
-        +  3 x 'template literal syntax' is only available in ES6 (use 'esversion: 6'). Lines (46, 98, 110).
-        +  2 x 'template literal syntax' is only available in ES6 (use 'esversion: 6'). Lines (40, 64).
-        +  1 x 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6'). Line (106).
-        +  1 x 	Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (getComputerWeapon, computerRandomWeapon, drawAnimation, playerChild, computerChild, incrementPlayerScore, incrementComputerScore). Line (47).
+        + 23 x 'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz). Lines(2 - 9, 13, 16 - 23, 26, 28, 43, 49, 51, 53).
+        +  7 x 'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz). Lines (11, 55, 62, 124, 137, 176, 188).
+        +  3 x 'for of' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz). Lines (62, 124, 137).
+        +  2 x 'template literal syntax' is only available in ES6 (use 'esversion: 6'). Lines (56, 81).
+        +  1 x 'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6'). Line (133).
+        +  1 x 	Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (getComputerWeapon, computerRandomWeapon, drawAnimation, playerChild, computerChild, incrementPlayerScore, incrementComputerScore). Line (63).
 
 + Accessibility
     + I confirmed that the colors and fonts chosen are accessible and easy to read by running it through lighthouse in devtools.
@@ -232,7 +232,3 @@ The live link can be found here - [Rock, Paper, Scissors](https://georgehazaka.g
   | ![angry scissors heading left](assets/images/Win-Scissors-Left.png)     |                                                                    |
   | ![broken scissors heading right](assets/images/Lose-Scissors-Right.png) |                                                                    |
   | ![broken scissors heading left](assets/images/Lose-Scissors-Left.png)   |                                                                    |
-
-
-
-
