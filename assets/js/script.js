@@ -1,3 +1,4 @@
+// These variables are assigned to html elements
 const buttons = document.getElementsByTagName("button");
 const playerDiv = document.getElementById("player-weapon-div");
 const computerDiv = document.getElementById("computer-weapon-div");
@@ -11,6 +12,7 @@ let computerRandomWeapon;
 
 const drawPara = document.createElement("p");
 
+// These variables are the weapons(images) which will take player's weapon and computer's weapon place based on winning/losing condition
 const rockWin = document.createElement("img");
 const rockLose = document.createElement("img");
 const paperWin = document.createElement("img");
@@ -20,7 +22,9 @@ const scissorsWinLeft = document.createElement("img");
 const scissorsLoseRight = document.createElement("img");
 const scissorsLoseLeft = document.createElement("img");
 
+// weaponsArray will be used to select one of its elements for the player's weapon and one for the computer's weapon
 const weaponsArray = [rockWin, rockLose, paperWin, paperLose, scissorsWinRight, scissorsWinLeft, scissorsLoseRight, scissorsLoseLeft];
+// A for loop (At line 53) will be used to attach each of imagesSourcesArray's elements to the weaponsArray's elements
 const imagesSourcesArray = [
     "assets/images/Win-Rock.png",
     "assets/images/Lose-Rock.png",
@@ -31,17 +35,29 @@ const imagesSourcesArray = [
     "assets/images/Lose-Scissors-Right.png",
     "assets/images/Lose-Scissors-Left.png"
 ];
+/* 
+    Push the player's weapon to this removePlayer array so that we remove the pushed weapon from playerDiv's children
+    And then we will empty this array after removing the pushed weapon from the playerDiv's children
+    This will make the playerDiv to only have a maximum of one child (one weapon/one image) after each button click
+*/
 const removePlayer = [];
+/* 
+    Push the computer's weapon to this removeComputer array so that we remove the pushed weapon from computerDiv's children
+    And then we will empty this array after removing the pushed weapon from the computerDiv's children
+    This will make the computerDiv to only have a maximum of one child (one weapon/one image) after each button click
+*/
 const removeComputer = [];
-const winningTeam = [];
-const losingTeam = [];
+// winningWeapons array will only include the winning options(winning images) of the weapons
+const winningWeapons = [];
+// losingWeapons array will only include the losing options(losing images) of the weapons
+const losingWeapons = [];
 
 for (let i = 0; i < weaponsArray.length; i++) {
     weaponsArray[i].setAttribute("src", `${imagesSourcesArray[i]}`);
 }
 
-winningTeam.push(rockWin, paperWin, scissorsWinRight, scissorsWinLeft);
-losingTeam.push(rockLose, paperLose, scissorsLoseRight, scissorsLoseLeft);
+winningWeapons.push(rockWin, paperWin, scissorsWinRight, scissorsWinLeft);
+losingWeapons.push(rockLose, paperLose, scissorsLoseRight, scissorsLoseLeft);
 
 for (let button of buttons) {
     button.addEventListener("click", function () {
@@ -59,6 +75,7 @@ for (let button of buttons) {
         drawDiv.classList.remove("draw-div-styles");
         drawPara.innerHTML = "";
         getComputerWeapon();
+        // This if statement guarantees that it is a draw only when both have chosen the same number
         if (parseInt(this.getAttribute("data-choice")) === computerRandomWeapon) {
             drawDiv.classList.add("draw-div-styles");
             drawPara.innerHTML = `It's A Draw, Computer chose: ${this.ariaLabel}`;
@@ -66,32 +83,41 @@ for (let button of buttons) {
             playerDiv.style.display = "none";
             computerDiv.style.display = "none";
             drawAnimation();
+        // This else if statement guarantees that the one with higher number wins
         } else if (parseInt(this.getAttribute("data-choice")) - computerRandomWeapon === 1 || parseInt(this.getAttribute("data-choice")) - computerRandomWeapon === -1) {
             playerWeapon.style.display = "none";
             computerWeapon.style.display = "none";
             if (parseInt(this.getAttribute("data-choice")) > computerRandomWeapon) {
-                playerChild(winningTeam, computerRandomWeapon + 1);
-                computerChild(losingTeam, computerRandomWeapon);
+                playerChild(winningWeapons, computerRandomWeapon + 1);
+                computerChild(losingWeapons, computerRandomWeapon);
                 incrementPlayerScore();
             } else {
+                // This if statement is to make sure the computer's weapon is the winning scissors that is heading LEFT
                 if (computerRandomWeapon === 2) {
-                    computerChild(winningTeam, computerRandomWeapon + 1);
+                    computerChild(winningWeapons, computerRandomWeapon + 1);
                 } else {
-                    computerChild(winningTeam, computerRandomWeapon);
+                    computerChild(winningWeapons, computerRandomWeapon);
                 }
-                playerChild(losingTeam, computerRandomWeapon - 1);
+                playerChild(losingWeapons, computerRandomWeapon - 1);
                 incrementComputerScore();
             }
+        /* 
+            This else statement is when the substraction of the chosen numbers is not 1 nor -1, that means the substraction is either 2 or -2
+            In this case one of them must have chosen rock and the other scissors
+        */
         } else {
             computerWeapon.style.display = "none";
             playerWeapon.style.display = "none";
+            // This if statement guarantees that the player is number 0, which means the computer is number 2
             if (parseInt(this.getAttribute("data-choice")) < computerRandomWeapon) {
-                playerChild(winningTeam, computerRandomWeapon - 2);
-                computerChild(losingTeam, computerRandomWeapon + 1);
+                playerChild(winningWeapons, computerRandomWeapon - 2);
+                // We added 1 to the computerRandomWeapon in this computerChild() function to make sure to choose the losing scissors that is heading LEFT
+                computerChild(losingWeapons, computerRandomWeapon + 1);
                 incrementPlayerScore();
+            // This else statement guarantees that the player is number 2, which means the computer is number 0
             } else {
-                playerChild(losingTeam, computerRandomWeapon + 2);
-                computerChild(winningTeam, computerRandomWeapon);
+                playerChild(losingWeapons, computerRandomWeapon + 2);
+                computerChild(winningWeapons, computerRandomWeapon);
                 incrementComputerScore();
             }
         }
@@ -100,8 +126,9 @@ for (let button of buttons) {
         }
 
         /**
-         *  Creates a delay so that you can click a button once after 1500 ms
+         *  Creates a delay so that you can click a button again only after 1500 ms has passed
          *  Then removes all animation properties
+         *  And the size of the clicked button is back to "scale: 1"
          */
         setTimeout(() => {
             drawDiv.style.removeProperty("animation");
@@ -120,6 +147,24 @@ for (let button of buttons) {
  */
 function getComputerWeapon() {
     computerRandomWeapon = Math.floor(Math.random() * 3);
+}
+
+/**
+ *  Appends the player's chosen weapon(image) as a child to the playerDiv
+ *  Then adds that child to the removePlayer array
+ */
+function playerChild(team, player) {
+    playerDiv.appendChild(team[player]);
+    removePlayer.push(playerDiv.appendChild(team[player]));
+}
+
+/**
+ *  Appends the computer's chosen weapon(image) as a child to the computerDiv
+ *  Then adds that child to the removeComputer array
+ */
+function computerChild(team, computer) {
+    computerDiv.appendChild(team[computer]);
+    removeComputer.push(computerDiv.appendChild(team[computer]));
 }
 
 /**
@@ -179,22 +224,4 @@ function playerScoreAnimation() {
  */
 function computerScoreAnimation() {
     computerScore.style.cssText = "animation: number-scale-increasing 1s ease";
-}
-
-/**
- *  Appends the player's chosen weapon (image) as a child to the playerDiv
- *  Then adds that child to the removePlayer array
- */
-function playerChild(team, player) {
-    playerDiv.appendChild(team[player]);
-    removePlayer.push(playerDiv.appendChild(team[player]));
-}
-
-/**
- *  Appends the computer's chosen weapon (image) as a child to the computerDiv
- *  Then adds that child to the removeComputer array
- */
-function computerChild(team, computer) {
-    computerDiv.appendChild(team[computer]);
-    removeComputer.push(computerDiv.appendChild(team[computer]));
 }
