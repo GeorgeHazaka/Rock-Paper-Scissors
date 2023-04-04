@@ -24,6 +24,7 @@ Users of this application will be able to experience this game with some images 
             + [Draw Message Area](#draw-message-area "Draw Message Area")
         + [The Footer](#the-footer "The Footer")
     + [Features Left to Implement](#features-left-to-implement "Features Left to Implement")
++ [User Experience](#user-experience "User Experience")
 + [Testing](#testing "Testing")
     + [Manual Testing](#manual-testing "Manual Testing")
         + [Buttons Testing](#buttons-testing "Buttons Testing")
