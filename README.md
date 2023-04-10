@@ -63,6 +63,12 @@ Please see below, a link to wireframes for the site layout.
 
     ![#A8FC2A green-yellow color](documentation/greenyellow%23A8FC2A.png) ![#FC0303 red color](documentation/red%23FC0303.png)
 
+**Note:** Colour Contrast (Google Chrome issue regarding Colour Contrast), using this website to analyse the colour: [WebAIM](https://webaim.org/resources/contrastchecker/)
++ Foreground colour: #E3E0A6
++ Background Colour: #3A1111
+
+![contrast checker](documentation/WebAIM-contrast-checker.png)
+
 ### Typography
 
 To make this application seem like a playful application, these two fonts were chosen:
@@ -202,7 +208,7 @@ To make this application seem like a playful application, these two fonts were c
 + Accessibility
     + I confirmed that the colors and fonts chosen are accessible and easy to read by running it through lighthouse in devtools.
 
-![Rating the performance, accessibility, best practices and SEO of the website](documentation/lighthouse-rock-paper-scissors.png)
+![rating the performance, accessibility, best practices and SEO of the website](documentation/lighthouse-rock-paper-scissors.png)
 
 ### Unfixed Bugs
 
